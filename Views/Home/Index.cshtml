@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model MensajeUsuario
+
+<!-- Views/Home/Index.cshtml -->
+<form method="post" asp-action="CapturarDatos">
+  <label for="nombre">Nombre:</label>
+  <input type="text" name="nombre" id="nombre" asp-for="Nombre" />
+  <span asp-validation-for="Nombre" class="text-danger"></span>
+
+  <label for="edad">Edad:</label>
+  <input type="number" name="edad" id="edad" asp-for="Edad" />
+  <span asp-validation-for="Edad" class="text-danger"></span>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
